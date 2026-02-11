@@ -1,5 +1,5 @@
 import { json } from "node:stream/consumers";
-import User from "./user.modle";
+import User from "./user.model";
 
 //save user
 export const saveUserService = async (data: any) => {

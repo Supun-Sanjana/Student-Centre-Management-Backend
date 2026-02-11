@@ -11,6 +11,15 @@ const studentSchema = new mongoose.Schema({
   lastname: {
     type: String,
   },
+  grade: {
+    type: String,
+  },
+  whatsappNumber: {
+    type: String,
+  },
+  parentContactNumber: {
+    type: String,
+  },
   attendance: [
     {
       date: {
@@ -36,7 +45,6 @@ const studentSchema = new mongoose.Schema({
       },
     },
   ],
-
   payment: [
     {
       date: {
@@ -50,7 +58,13 @@ const studentSchema = new mongoose.Schema({
       },
     },
   ],
+  grades: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Grade",
+    },
+  ],
 });
 
-const Student = mongoose.model("student", studentSchema)
-export default Student
+const Student = mongoose.model("Student", studentSchema);
+export default Student;

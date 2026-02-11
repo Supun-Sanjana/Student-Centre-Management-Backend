@@ -2,6 +2,8 @@ import cors from "cors";
 import express from "express";
 import healthRoutes from "./modules/health/health.routes";
 import userRoute from "./modules/user/user.route";
+import centerRouter from "./modules/center/center.route";
+import gradeRouter from "./modules/grade/grade.route";
 
 const app = express();
 
@@ -10,5 +12,7 @@ app.use(express.json());
 
 app.use("/api/v1/health", healthRoutes);
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/center", centerRouter);
+app.use("/api/v1/grade", gradeRouter);
 
 export default app;
