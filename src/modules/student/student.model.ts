@@ -8,10 +8,7 @@ const studentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  lastname: {
-    type: String,
-  },
-  grade: {
+  lastName: {
     type: String,
   },
   whatsappNumber: {
@@ -58,12 +55,11 @@ const studentSchema = new mongoose.Schema({
       },
     },
   ],
-  grades: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Grade",
-    },
-  ],
+  grade: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Grade",
+    required: true,
+  },
 });
 
 const Student = mongoose.model("Student", studentSchema);

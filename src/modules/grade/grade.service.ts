@@ -23,3 +23,4 @@ export const createGradeService = async (centerId: string, data: Grade) => {
     throw new Error(error);
   }
 };
+
